@@ -1,0 +1,185 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background: linear-gradient(#111,#222);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgb(2, 245, 245);
+    position: absolute;
+    z-index: -1;
+    clip-path: circle(40% at right 70%);
+
+}
+
+.container {
+    width: 80%;
+    height: 80%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+nav .logo {
+    color: #eee;
+    text-decoration:none;
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+nav .links a {
+    margin-left: 20px;
+    color: #eee;
+    text-decoration:none;
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+nav .links a:hover{
+    color:  rgb(2, 245, 245);
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    
+}  
+
+main .content {
+    color: #eee;
+    width: 40%;
+    margin-bottom: 50px;
+}
+
+main .content h2 {
+    font-size: 3em;
+    font-weight: 700;
+   letter-spacing: 1px; 
+   text-transform: uppercase;
+  
+}
+
+main .content p {
+    font-size: 1.3em;
+    font-weight: 500;
+   letter-spacing: 1px; 
+   margin: 10px 0;
+}
+
+main .img {
+    width: 40%;
+    width: 350px;
+}
+
+main .img img {
+    width: 350px;
+}
+
+@media (min-width:950px) and (max-width:1150px) {
+    .img img {
+        width: 330px;
+    }
+}
+
+@media (max-width:950px) {
+    main {
+        flex-direction: column;
+        justify-content: center;
+    }
+    main .img img, 
+    main .content {
+        width: 100%;
+        text-align: center;
+    }
+
+    body::after {
+        clip-path: circle(50% at bottom);
+    }
+}
+@media (max-width: 950px) {
+    main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    main .content, 
+    main .img {
+        width: 100%;
+    }
+
+    main .content h2 {
+        font-size: 2.5em;
+    }
+
+    main .content p {
+        font-size: 1.1em;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav .links a {
+        font-size: 1.1em;
+        margin: 10px 0;
+    }
+
+    body::after {
+        clip-path: circle(50% at bottom);
+    }
+}
+
+/* Optimizations for Extra Small Screens (Mobile) */
+@media (max-width: 600px) {
+    main .content h2 {
+        font-size: 2em;
+    }
+
+    main .content p {
+        font-size: 1em;
+    }
+
+    nav .logo {
+        font-size: 1.5em;
+    }
+
+    nav .links a {
+        font-size: 1em;
+    }
+
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+}
+
